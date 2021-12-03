@@ -1,64 +1,53 @@
-html,
 body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  width: 280px;
-  min-height: 280px;
-  padding-top: 20px;
-  padding-left: 20px;
-
   font-size: 14px;
-  line-height: 1.2;
-  font-family: "Arial", sans-serif;
-
-  background-color: #ecf0f1;
+  font-family: "PT Sans", sans-serif;
+  color: #777777;
 }
 
-.backgrounds {
-  display:inline-block;
-  width:200px;
-  background-color:#1abc9c;
-  color:white;
-  padding:0px 20px;
-  
-  }
-  
-  .h1 {
-  margin-top:20px;
-  font-size:20px;
-  font-weight:normal;
-  }
-  
-.p {
- margin-top:20px;
-  }
-  
-.share {
-  margin-top:25px;
-  }
-  
-.social {
-  display:inline-block;
-  width:30px;
-  height:30px;
-  background-color:#16a085;
-  margin-right:5px;
-  margin-bottom:17px;
-  background-image:url("social-challenge.png");
-  background-repeat:no-repeat;
-  }
-  
-.social-fb {
-  background-position:0px 0px;
-  }
-  
-.social-tw {
-  background-position:-30px 0px;
-  }
-  
-.social-g {
-  background-position:-60px 0px;
-  }
+.contacts {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.contacts .title {
+  margin-bottom: 20px;
+
+  font-weight: bold;
+  font-size: 20px;
+  color: #7f8c8c;
+}
+
+.contacts .item {
+  position: relative;
+
+  margin-bottom: 10px;
+  padding-left: 30px;
+}
+
+.contacts .icon {
+  position: absolute;
+  top: 3px;
+  left: 0;
+
+  width: 22px;
+  height: 32px;
+
+  background: url("contacts.png") no-repeat 0 0;
+}
+
+.contacts .icon-location {
+ background-position: 0 0;
+}
+
+.contacts .icon-phone {
+   background-position: -30px 0;
+}
+
+.contacts .icon-email {
+   background-position: -60px 0;
+}
+
+.contacts a {
+  color:#e2534b;
+}

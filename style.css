@@ -1,57 +1,93 @@
 body {
+  margin: 0;
+  padding: 0;
+  background-color: #161616;
+  text-align: center;
   font-size: 14px;
-  font-family: "PT Sans", sans-serif;
-  color: #777777;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 
-.comment {
+section {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.shape {
   position: relative;
-
-  margin-top: 30px;
-  margin-right: 20px;
-  margin-left: 50px;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  background-color: #ffffff;
 }
 
-.comment-avatar {
-  width: 70px;
-  height: 70px;
-  position:absolute;
-  top:-5px;
-  left:-40px;
-  background: #7f8c8c url("avatar.png") no-repeat 50% 50%;
+.shape .details {
+  display: none;
+  padding-top: 60px;
+  width: 310px;
+  height: 310px;
+  background-color: rgba(75, 90, 120, 0.9);
+  color: #ffffff;
 }
 
-.comment-author {
-  margin-bottom: 5px;
-  padding-right: 20px;
-  padding-left: 45px;
-
-  font-weight: bold;
-  font-size: 16px;
+.details header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+  text-transform: uppercase;
+  font-size: 26px;
 }
 
-.comment-text {
-  padding: 12px;
-  padding-left: 45px;
-
-  background-color: #f8f8f8;
-  border-bottom: 5px solid #e5e6e6;
+.details p {
+  margin: 10px auto;
+  width: 70%;
+  line-height: 1.4;
 }
 
-.comment-date {
-  margin-top: 5px;
-
-  font-size: 12px;
-  color: #bdc3c7;
+.button {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #2f3644;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.comment-reply {
+.button:hover {
+  background-color: #ffffff;
+  color: #2f3644;
+}
+
+.shape.techmart {
+  background: url("techmart.jpg") no-repeat 30% 0%;
+}
+
+.shape:hover .details {
+  display: block;
+}
+
+.overlay {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
+  z-index: 1;
+  width: 310px;
+  height: 310px;
+  outline: 0;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  font-size: 0;
+  transition: transform 0.6s ease-out;
+}
 
-  width: 15px;
-  height: 15px;
+.overlay {
+  transform: scale(1);
+  }
+.overlay.hexagon {
+  background-image: url("hexagon.svg");
+}
 
-  background: url("reply.png") no-repeat 0 0;
+.shape:hover .overlay {
+  transform: scale(1.04)
 }

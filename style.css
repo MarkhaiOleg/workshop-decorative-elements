@@ -1,13 +1,7 @@
 @font-face {
-  font-weight: 400;
-  font-family: "Roboto";
-  src: url("fonts/roboto.woff") format("woff");
-}
-
-@font-face {
-  font-weight: 700;
-  font-family: "Roboto";
-  src: url("fonts/robotobold.woff") format("woff");
+  font-weight: 300;
+  font-family: "Open Sans";
+  src: url("fonts/opensanslight.woff") format("woff");
 }
 
 body {
@@ -15,65 +9,71 @@ body {
   padding: 0;
   background-color: #f5f5f5;
   color: #333333;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
-}
-
-.works {
-  margin: 100px auto;
-  padding: 20px;
-  width: 240px;
-  background-color: white;
-  box-shadow: 0 0 3px #cccccc;
-}
-
-.caption-link {
-  position: relative;
-  z-index: 1;
-  display: block;
-  overflow: hidden;
-}
-
-.caption-link img {
-  display: block;
-  max-width: 100%;
-  transition: transform 0.3s ease;
-}
-
-.caption-link:hover img {
-  transform: translateX(100%);
-}
-
-.caption-link::before,
-.caption-link::after {
-  position: absolute;
-  z-index: -1;
-  box-sizing: border-box;
-  width: 100%;
-  background-color: #333333;
-  text-align: center;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-80px);
-}
-
-.caption-link::before {
-  padding: 30px;
-  height: 30%;
-  color: #ffffff;
-  content: attr(data-title);
-  font-weight: bold;
   font-size: 22px;
+  font-family: "Open Sans", sans-serif;
 }
 
-.caption-link::after {
-  top: 30%;
-  padding: 0 30px;
-  height: 70%;
-  color: #d7bb97;
-  content: attr(data-description);
+a {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.caption-link:hover::before,
-.caption-link:hover::after {
-  transform: translateX(0);
+.effect-2 {
+  margin: 100px auto;
+  padding: 30px 0;
+  width: 400px;
+  background-color: #435a6b;
+  text-align: center;
+}
+
+.effect-2 a {
+  padding: 0 20px;
+  height: 45px;
+  color: #ffffff;
+  font-weight: 300;
+  line-height: 45px;
+}
+
+.effect-2 a::before,
+.effect-2 a::after {
+  position: absolute;
+  width: 45px;
+  height: 2px;
+  background-color: #ffffff;
+  content: "";
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+
+.effect-2 a::before {
+  top: 0;
+  left: 0;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+}
+
+.effect-2 a::after {
+  right: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+  transform-origin: 100% 100%;
+}
+
+.effect-2 a:hover::before,
+.effect-2 a:hover::after {
+  opacity: 1;
+}
+
+.effect-2 a:hover::before {
+  left: 50%;
+  transform: rotate(0deg) translateX(-50%);
+}
+
+.effect-2 a:hover::after {
+  right: 50%;
+  transform: rotate(0deg) translateX(50%);
 }

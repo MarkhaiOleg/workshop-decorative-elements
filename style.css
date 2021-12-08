@@ -42,7 +42,9 @@ body {
   text-align: right;
 }
 
-.inner::before {
+.inner::before,
+.inner::after,
+.outer::before {
   position: absolute;
   z-index: 1;
   box-sizing: border-box;
@@ -51,13 +53,28 @@ body {
   border: 20px solid #000000;
   border-radius: 50%;
   content: "";
+}
+
+.inner::before {
   bottom: -60px;
   left: -40px;
-  clip: rect(auto, auto, 41px, 40px);
+  clip: rect(auto, auto, 40px, 40px);
+}
+
+.inner::after {
+  right: -40px;
+  bottom: -60px;
+  clip: rect(auto, 40px, 40px, auto);
+}
+
+.outer::before {
+  top: -40px;
+  left: -60px;
+  clip: rect(40px, auto, auto, 40px);
 }
 
 
-.inner::after {
+.outer::after {
   position: absolute;
   z-index: 1;
   box-sizing: border-box;
@@ -66,9 +83,15 @@ body {
   border: 20px solid #000000;
   content: "";
   border-radius:50%;
-  bottom:-60px;
-  right:-40px;
-  clip:rect(auto,40px,41px,auto);
-
+  top:-40px;
+  right:-60px;
+  clip: rect(40px, 40px, auto, auto);
 }
+
+.outer::before,
+.outer::after,
+.inner::before,
+.inner::after {
+  border-color:#ffffff;
+  }
 

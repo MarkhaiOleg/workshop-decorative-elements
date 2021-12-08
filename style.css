@@ -1,183 +1,74 @@
 @font-face {
-  font-weight: 300;
-  font-family: "Open Sans";
-  src: url("fonts/opensanslight.woff") format("woff");
-}
-
-@font-face {
-  font-weight: 700;
-  font-family: "Open Sans";
-  src: url("fonts/opensansbold.woff") format("woff");
+  font-weight: 400;
+  font-family: "Lora";
+  font-style: italic;
+  src: url("fonts/loraitalic.woff") format("woff");
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: rgb(42, 113, 113);
   color: #333333;
-  font-size: 22px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lora", serif;
 }
 
-h1 {
-  margin: 25px 0;
-  text-align: center;
-  font-weight: 300;
-  font-size: 30px;
-}
-
-a {
+.outer {
   position: relative;
-  display: inline-block;
-  outline: none;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 300;
-}
-
-div[class^="effect-"] {
-  margin: 0 auto;
-  padding: 30px 0;
-  width: 400px;
-  text-align: center;
-}
-
-.effect-1 {
-  background-color: #f19f0f;
-}
-
-.effect-1 a {
-  padding: 6px 0 8px;
-  color: #ffffff;
-}
-
-.effect-1 a::after {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: rgba(0, 0, 0, 0.1);
-  content: "";
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: translateY(10px);
-}
-
-.effect-1 a:hover::after {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.effect-2 {
-  background-color: #435a6b;
-}
-
-.effect-2 a {
-  padding: 0 20px;
-  height: 45px;
-  color: #ffffff;
-  line-height: 45px;
-}
-
-.effect-2 a::before,
-.effect-2 a::after {
-  position: absolute;
-  width: 45px;
-  height: 2px;
+  display: block;
+  margin: 50px auto 0;
+  padding: 20px 0;
+  max-width: 320px;
+  border: 1px solid #888888;
+  border-width: 1px 0;
   background-color: #ffffff;
-  content: "";
-  opacity: 0.2;
-  transition: all 0.3s;
 }
 
-.effect-2 a::before {
-  top: 0;
-  left: 0;
-  transform: rotate(90deg);
-  transform-origin: 0 0;
-}
-
-.effect-2 a::after {
-  right: 0;
-  bottom: 0;
-  transform: rotate(90deg);
-  transform-origin: 100% 100%;
-}
-
-.effect-2 a:hover::before {
-  left: 50%;
-  opacity: 1;
-  transform: rotate(0deg) translateX(-50%);
-}
-
-.effect-2 a:hover::after {
-  right: 50%;
-  opacity: 1;
-  transform: rotate(0deg) translateX(50%);
-}
-
-.effect-3 {
-  background-color: #2ac56c;
-}
-
-.effect-3 a {
-  color: rgba(0, 0, 0, 0.2);
-  font-weight: bold;
-}
-
-.effect-3 a::before {
-  position: absolute;
-  color: #ffffff;
-  content: attr(data-hover);
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.effect-3 a:hover::before {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.effect-4 {
-  background-color: #3fa46a;
-}
-
-.effect-4 a {
-  padding: 8px;
-  color: #237546;
-  font-weight: bold;
-}
-
-.effect-4 a:hover {
-  color: #ffffff;
-  transition: color 0.3s;
-}
-
-.effect-4 a::before,
-.effect-4 a::after {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
+.inner {
+  position: relative;
+  margin: 0 -20px;
+  padding: 0 40px;
   background-color: #ffffff;
+  font-style: italic;
+}
+
+.inner p {
+  margin: 0 0 1em;
+  font-size: 1.5em;
+}
+
+.inner footer {
+  display: block;
+  text-align: right;
+}
+
+.inner::before {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border: 20px solid #000000;
+  border-radius: 50%;
   content: "";
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
+  bottom: -60px;
+  left: -40px;
+  clip: rect(auto, auto, 41px, 40px);
 }
 
-.effect-4 a::before {
-  top: 0;
-  transform: translateY(-10px);
+
+.inner::after {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  border: 20px solid #000000;
+  content: "";
+  border-radius:50%;
+  bottom:-60px;
+  right:-40px;
+  clip:rect(auto,40px,41px,auto);
+
 }
 
-.effect-4 a::after {
-  bottom: 0;
-  transform: translateY(10px);
-}
-
-.effect-4 a:hover::before,
-.effect-4 a:hover::after {
-  opacity: 1;
-  transform: translateY(0);
-}
